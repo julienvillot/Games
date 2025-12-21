@@ -178,6 +178,110 @@
   animation: confetti 3s linear forwards;
 }
 
+/* Navigation & Hub */
+.home-header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #FF6B9D11, #4ECDC411);
+  border-radius: var(--radius-lg);
+  margin-bottom: 40px;
+}
+
+.home-title {
+  font-size: clamp(32px, 6vw, 54px);
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0 var(--color-accent);
+}
+
+.home-subtitle {
+  font-size: 20px;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.game-card {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  border: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.game-card:hover:not(.disabled) {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-secondary);
+}
+
+.game-card.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+
+.game-card-icon {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.game-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.game-card-desc {
+  font-size: 16px;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.play-button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.back-button {
+  background: var(--color-accent);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+  box-shadow: var(--shadow-md);
+}
+
 @media (max-width: 768px) {
   .game-container {
     padding: 20px;
@@ -194,5 +298,9 @@
 
   .word-card {
     padding: 20px;
+  }
+
+  .home-header {
+    padding: 40px 15px;
   }
 }
