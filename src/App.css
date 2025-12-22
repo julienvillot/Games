@@ -155,12 +155,21 @@ body {
 /* Grid & Cards */
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Reduced from 280px */
+  gap: 20px;
+  padding: 15px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+    /* Force 1 column on smaller screens */
+  }
 }
 
 .game-card {
@@ -348,6 +357,7 @@ body {
 .number-choices {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  /* Default to 2x2 for balance */
   gap: 20px;
   max-width: 400px;
   margin: 0 auto;
